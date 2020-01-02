@@ -1,0 +1,25 @@
+<div class="qh-container-wrap" [ngClass]="{
+  'qh-sidenav-collapsed': options.sidenavCollapsed && options.navPos!=='top'}">
+  <!--头部 headerPos 是above-->
+  <!--  <app-header class="qh-header"></app-header>-->
+  <nz-layout class="qh-container">
+    <!--侧边栏-->
+    <nz-sider class="qh-sidenav b-s qh-sidenav-dark"
+              nzCollapsible
+              nzBreakpoint="md"
+              [nzWidth]="240"
+              [nzCollapsedWidth]="0"
+              [(nzCollapsed)]="isCollapsed"
+              [nzTrigger]="null">
+      <app-sidenav (toggleCollapsed)="toggleCollapsed()"></app-sidenav>
+    </nz-sider>
+    <nz-layout class="qh-content-wrap">
+      <nz-header class="qh-header qh-header-white b-s">
+        <app-header (toggleSidenav)="isCollapsed = !isCollapsed"></app-header>
+      </nz-header>
+      <nz-content class="qh-content">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</div>

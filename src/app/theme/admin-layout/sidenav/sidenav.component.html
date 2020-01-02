@@ -1,0 +1,49 @@
+<div>
+  <app-branding class="qh-sidenav-header b-b-1" (toggleCollapsed)="toggleCollapsed.emit()"></app-branding>
+</div>
+<div class="qh-sidenav-inner">
+  <ul nz-menu appAccordion nzMode="inline" [nzInlineCollapsed]="isCollapsed"
+      [nzTheme]="'dark'">
+    <ng-container appAccordionlink *ngFor="let menuItem of menus; let i = index"
+                  [group]="menuItem.state">
+      <!--链接-->
+      <li nz-menu-item [nzMatchRouter]="true" *ngIf="menuItem.type === 'link'">
+        <a [routerLink]="['/', menuItem.state]">
+          <i nz-icon [nzType]="menuItem.icon"></i>
+          <span>{{ menuItem.name }}</span>
+        </a>
+      </li>
+      <!--一级标题-->
+      <li nz-submenu nzOpen *ngIf="menuItem.type === 'sub'"
+          [nzTitle]="menuItem.name" nzIcon="dashboard"
+          [(nzOpen)]="openMap[i]" (nzOpenChange)="openHandler(i+ '')"
+          appAccordionanchor>
+        <ul appAccordion>
+          <ng-container appAccordionlink *ngFor="let childLvl1 of menuItem.children"
+                        [group]="childLvl1.state">
+            <!--一级标题子目录-->
+            <li nz-menu-item *ngIf="childLvl1.type === 'link'">
+              <a [routerLink]="['/',  menuItem.state, childLvl1.state]">
+                {{ childLvl1.name }}
+              </a>
+            </li>
+            <!--二级标题-->
+            <li nz-submenu appAccordionanchor *ngIf="childLvl1.type === 'sub'"
+                [nzTitle]="childLvl1.name">
+              <ul appAccordion>
+                <ng-container appAccordionlink *ngFor="let childLvl2 of childLvl1.children"
+                              [group]="childLvl2.state">
+                  <li nz-menu-item *ngIf="childLvl2.type === 'link'">
+                    <a [routerLink]="['/',  menuItem.state, childLvl1.state, childLvl2.state]">
+                      <span>{{ childLvl2.name }}</span>
+                    </a>
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+</div>

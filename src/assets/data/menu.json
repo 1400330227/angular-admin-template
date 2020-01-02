@@ -1,0 +1,159 @@
+{
+  "menu": [
+    {
+      "state": "dashboard",
+      "name": "Dashboard",
+      "type": "link",
+      "icon": "dashboard",
+      "badge": {
+        "color": "red-500",
+        "value": "5"
+      }
+    },
+    {
+      "state": "forms",
+      "name": "Forms",
+      "type": "sub",
+      "icon": "description",
+      "children": [
+        {
+          "state": "basic",
+          "name": "Basic",
+          "type": "link"
+        },
+        {
+          "state": "ng-select",
+          "name": "Ng Select",
+          "type": "link"
+        },
+        {
+          "state": "dynamic",
+          "name": "Dynamic Form",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "state": "tables",
+      "name": "Tables",
+      "type": "sub",
+      "icon": "format_line_spacing",
+      "label": {
+        "color": "indigo-500",
+        "value": "new"
+      },
+      "children": [
+        {
+          "state": "basic",
+          "name": "Basic Table",
+          "type": "link"
+        },
+        {
+          "state": "advanced",
+          "name": "Advanced Table",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "state": "profile",
+      "name": "Profile",
+      "type": "sub",
+      "icon": "person",
+      "children": [
+        {
+          "state": "overview",
+          "name": "Overview",
+          "type": "link"
+        },
+        {
+          "state": "settings",
+          "name": "Settings",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "state": "material",
+      "name": "Material",
+      "type": "sub",
+      "icon": "favorite",
+      "children": [
+        {
+          "state": "",
+          "name": "Form Controls",
+          "type": "sub",
+          "children": [
+            {
+              "state": "autocomplete",
+              "name": "Autocomplete",
+              "type": "link"
+            },
+            {
+              "state": "checkbox",
+              "name": "Checkbox",
+              "type": "link"
+            },
+            {
+              "state": "datepicker",
+              "name": "Datepicker",
+              "type": "link"
+            },
+            {
+              "state": "form-field",
+              "name": "Form Field",
+              "type": "link"
+            },
+            {
+              "state": "input",
+              "name": "Input",
+              "type": "link"
+            },
+            {
+              "state": "radio",
+              "name": "Radio",
+              "type": "link"
+            },
+            {
+              "state": "select",
+              "name": "Select",
+              "type": "link"
+            },
+            {
+              "state": "slider",
+              "name": "Slider",
+              "type": "link"
+            },
+            {
+              "state": "slide-toggle",
+              "name": "Slide Toggle",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "state": "data-table",
+          "name": "Data Table",
+          "type": "sub",
+          "children": [
+            {
+              "state": "paginator",
+              "name": "Paginator",
+              "type": "link"
+            },
+            {
+              "state": "sort",
+              "name": "Sort",
+              "type": "link"
+            },
+            {
+              "state": "table",
+              "name": "Table",
+              "type": "link"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

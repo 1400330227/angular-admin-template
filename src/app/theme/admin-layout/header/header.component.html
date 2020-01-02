@@ -1,0 +1,12 @@
+<div class="qh-header-inner" nz-row nzType="flex" [nzAlign]="'middle'">
+  <span nz-col class="header-trigger" (click)="toggleSidenav.emit()">
+      <i class="trigger"
+         nz-icon
+         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
+      </i>
+  </span>
+  <span style="flex: 1 1 auto"></span>
+  <app-notification nz-col class="qh-col" nzLg="1" nzSm="1" nzXs="0"></app-notification>
+  <app-user class="qh-col" nz-col nzLg="1" nzSm="1" nzXs="0"></app-user>
+  <app-settings class="qh-col" nz-col nzLg="1" nzSm="1" nzXs="0"></app-settings>
+</div>
